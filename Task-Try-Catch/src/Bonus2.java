@@ -7,7 +7,7 @@ public class Bonus2 {
         String validUsername = "Coded";
         String validPassword = "Coded123";
 
-        for (int i = 5; i > 0; i--) {
+        for (int i = 5; i >= 0; i--) {
 
             try {
 
@@ -18,8 +18,12 @@ public class Bonus2 {
                 if (userName.equals(validUsername) && password.equals(validPassword)) {
                     System.out.println("Welcome!!!");
                     break;
-                } else {
+
+                } else if (i > 0) {
                     throw new Exception("Invalid credentials");
+
+                } else {
+                    throw new Exception("Maximum attempts exceeded");
                 }
 
             } catch (Exception e) {
